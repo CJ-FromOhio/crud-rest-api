@@ -13,17 +13,17 @@ import lombok.*;
 @AllArgsConstructor
 public class UserCreateUpdateDto {
 //    private Long id;
-    @NotBlank
-    @Size(min = 8, max = 64)
+    @NotBlank(message = "имя пользователя не должно быть пустым")
+    @Size(min = 4, max = 64)
     private String username;
     @Size(min = 2, max = 64)
-    @NotBlank
+    @NotBlank(message = "имя не должно быть пустым")
     private String firstname;
     @Size(min = 2, max = 64)
-    @NotBlank
+    @NotBlank(message = "фамилия не должно быть пустым")
     private String lastname;
 
     private Role role;
-    @Email
+    @Email(message = "почта введена не правельна")
     private String email;
 }
